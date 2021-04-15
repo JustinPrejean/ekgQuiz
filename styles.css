@@ -28,12 +28,25 @@ body {
   margin: 0 15%;
 }
 
-.intro {
+.intro,
+.resultsContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   height: 100%;
+}
+
+.resultsContainer h2 {
+  font-size: 3em;
+}
+
+.resultsContainer h3 {
+  font-size: 2.3rem;
+}
+
+.resultsContainer h4 {
+  font-size: 2rem;
 }
 
 img {

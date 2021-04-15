@@ -55,10 +55,15 @@
               </button>
             </div>
           </form>
-          <button id="submitButton" class="hidden">Submit</button>
           <button id="nextButton" class="mt-2" disabled>Next question</button>
-          <button class="hidden" id="resultsButton">See Results</button>
+          <button class="hidden mt-2" id="resultsButton">See Results</button>
         </div>
+      </div>
+      <div class="resultsContainer hidden">
+        <h2>Finished!</h2>
+        <h3 id="finalScoreDisplay"></h3>
+        <h4 id="finalScoreRatio"></h4>
+        <button id="quizRetry" href="index.html">Retry Quiz</button>
       </div>
     </div>
     <script src="script.js"></script>
