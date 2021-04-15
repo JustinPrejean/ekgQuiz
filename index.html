@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>EKG Quiz</title>
+  </head>
+  <body>
+    <header class="mb-4 mt-4">
+      <h1 class="title">EKG Quiz</h1>
+    </header>
+    <div class="card">
+      <div class="intro">
+        <h2 style="margin: 0; font-size: 1.8rem">Welcome!</h2>
+        <img id="logo" src="strips/logo.png" alt="" />
+        <button id="quizStart">Begin Quiz</button>
+      </div>
+      <div class="questionContainer hidden">
+        <div class="question">
+          <img
+            src="strips/Picture1.png
+          "
+            alt="question"
+            id="question-img"
+          />
+          <h2 id="questionText" class="text-align-center">
+            What is shown in this strip?
+          </h2>
+        </div>
+        <div class="answers">
+          <form action="" class="container">
+            <div class="row justify-content-around">
+              <button class="answer col-md-5 m-2" type="button">
+                Sinus Tachycardia
+              </button>
+              <button class="answer col-md-5 m-2" type="button">
+                Sinus Bradycardia
+              </button>
+            </div>
+            <div class="row justify-content-around">
+              <button class="answer col-md-5 m-2 correct" type="button">
+                Sinus Rhythm
+              </button>
+              <button class="answer col-md-5 m-2" type="button">
+                Atrial Fibrillation
+              </button>
+            </div>
+          </form>
+          <button id="submitButton" class="hidden">Submit</button>
+          <button id="nextButton" class="mt-2" disabled>Next question</button>
+          <button class="hidden" id="resultsButton">See Results</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
