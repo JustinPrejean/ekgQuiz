@@ -14,11 +14,12 @@ const finalScoreDisplay = document.querySelector('#finalScoreDisplay');
 const finalScoreRatio = document.querySelector('#finalScoreRatio');
 
 let score = 0;
-let questionNumber = 1;
+let questionNumber = 0;
 
 quizStart.addEventListener('click', () => {
   intro.classList.add('hidden');
   questionContainer.classList.remove('hidden');
+  nextQuestionContent();
 });
 
 resultsButton.addEventListener('click', () => {
@@ -51,6 +52,8 @@ nextButton.addEventListener('click', () => {
   for (var i = 0; i < answers.length; i++) {
     nextQuestionStyle(answers[i]);
   }
+  questionNumber++;
+
   nextQuestionContent();
 
   if (questionNumber < questions.length - 1) {
@@ -58,11 +61,10 @@ nextButton.addEventListener('click', () => {
   } else {
     showResultsButton();
   }
-  questionNumber++;
 });
 
 const submittedAnswer = (element) => {
-  questionNumber < questions.length
+  questionNumber < questions.length - 1
     ? enableNextButton()
     : enableResultsButton();
 
@@ -119,6 +121,8 @@ const nextQuestionStyle = (element) => {
 const nextQuestionContent = () => {
   questionText.innerHTML = questions[questionNumber].question;
   questionImage.src = questions[questionNumber].image;
+  console.log(questions[questionNumber].image);
+  console.log(questionNumber);
   let newCorrect = Math.floor(Math.random() * 4);
   let wrongCount = 0;
   for (i = 0; i < answers.length; i++) {
@@ -133,7 +137,12 @@ const nextQuestionContent = () => {
 };
 
 const questions = [
-  {},
+  {
+    image: 'strips/Picture1.png',
+    question: 'What rhythm is shown in this strip?',
+    correctAnswer: 'Supraventricular Tachycardia',
+    wrongAnswers: ['Atrial Flutter', 'Sinus Bradycardia', 'Sinus Rhythm'],
+  },
   {
     image: 'strips/Picture3.png',
     question: 'What rhythm is shown in this strip?',
